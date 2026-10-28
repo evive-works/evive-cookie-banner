@@ -7,6 +7,7 @@ service.
   Google Consent Mode v2 starts as "denied". YouTube/Vimeo iframes are sent with `src="about:blank"`, and the real
   address loads only after consent or a click on "Load video" (YouTube then via youtube-nocookie.com). DNS/preconnect
   hints to those hosts are removed.
+- **Without video embeds** (setting "Video embeds" off) the banner leaves out the External media category and the sentence about videos.
 - **Fair choice.** "Accept all" and "Reject all" look the same. Neither scrolling nor clicking elsewhere counts as
   consent. "Settings" offers per-category toggles: Necessary (always on), Analytics, External media.
 - **Changeable.** Any link to `#cookie-settings`, or the shortcode `[evive_cookie_settings]`, reopens the banner.

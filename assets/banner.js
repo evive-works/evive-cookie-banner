@@ -1,4 +1,4 @@
-/* evive Cookie Banner 1.0.1: nothing non-essential before consent.
+/* evive Cookie Banner: nothing non-essential before consent.
  * - Choice is kept in the first-party cookie evive_consent (necessary, 180 days).
  * - Analytics: Google Consent Mode v2 starts "denied"; Google Tag Manager is only loaded after consent.
  *   Withdrawing sets consent back to denied and removes the _ga / _gid / _gat cookies.
@@ -16,6 +16,7 @@
     en: {
       title: 'Cookies on this website',
       text: 'We use necessary cookies to make this website work. With your permission we also use analytics cookies (Google Analytics) to see which pages and channels bring visitors and sales, and we load videos from external platforms. Nothing is used before you choose.',
+      textNoMedia: 'We use necessary cookies to make this website work. With your permission we also use analytics cookies (Google Analytics) to see which pages and channels bring visitors and sales. Nothing is used before you choose.',
       privacy: 'Privacy policy',
       accept: 'Accept all',
       reject: 'Reject all',
@@ -35,6 +36,7 @@
     nl: {
       title: 'Cookies op deze website',
       text: 'We gebruiken noodzakelijke cookies om deze website te laten werken. Met je toestemming gebruiken we ook analytische cookies (Google Analytics) om te zien welke pagina’s en kanalen bezoekers en aankopen opleveren, en laden we video’s van externe platforms. Niets daarvan gebeurt voordat je kiest.',
+      textNoMedia: 'We gebruiken noodzakelijke cookies om deze website te laten werken. Met je toestemming gebruiken we ook analytische cookies (Google Analytics) om te zien welke pagina’s en kanalen bezoekers en aankopen opleveren. Niets daarvan gebeurt voordat je kiest.',
       privacy: 'Privacyverklaring',
       accept: 'Alles accepteren',
       reject: 'Alles weigeren',
@@ -209,7 +211,7 @@
     el.innerHTML =
       '<div class="evive-cb-inner">' +
         '<p class="evive-cb-title">' + T.title + '</p>' +
-        '<p class="evive-cb-text">' + T.text + privacy + '</p>' +
+        '<p class="evive-cb-text">' + (cfg.media ? T.text : T.textNoMedia) + privacy + '</p>' +
         '<div class="evive-cb-prefs" hidden>' + row('necessary', true) + row('analytics') + (cfg.media ? row('media') : '') + '</div>' +
         '<div class="evive-cb-buttons">' +
           '<button type="button" class="evive-cb-btn" data-act="reject">' + T.reject + '</button>' +
