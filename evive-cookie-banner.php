@@ -5,7 +5,7 @@
  *              Google Tag Manager is only loaded after "Accept" (with Google Consent Mode v2 signals), and
  *              YouTube/Vimeo embeds are held back until the visitor loads them. Equal Accept/Reject buttons,
  *              no consent by scrolling or clicking elsewhere, choice changeable via a "Cookie settings" link.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: evive.works (StackPros B.V.)
  * Author URI: https://evive.works
  * License: GPL-2.0-or-later
@@ -13,7 +13,7 @@
 
 if (!defined('ABSPATH')) exit;
 
-define('EVIVE_CB_VERSION', '1.0.0');
+define('EVIVE_CB_VERSION', '1.0.1');
 define('EVIVE_CB_FILE', __FILE__);
 define('EVIVE_CB_DIR', plugin_dir_path(__FILE__));
 

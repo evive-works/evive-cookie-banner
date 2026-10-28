@@ -54,7 +54,7 @@
 .evive-cb-btn:focus-visible { outline: 3px solid #3b82f6; outline-offset: 2px; }
 @media (max-width: 560px) {
   #evive-cb { left: 8px; right: 8px; bottom: 8px; }
-  #evive-cb .evive-cb-buttons { flex-direction: column-reverse; }
+  #evive-cb .evive-cb-buttons { flex-direction: column; }
   #evive-cb .evive-cb-btn { width: 100%; }
 }
 

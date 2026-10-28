@@ -1,4 +1,4 @@
-/* evive Cookie Banner 1.0.0: nothing non-essential before consent.
+/* evive Cookie Banner 1.0.1: nothing non-essential before consent.
  * - Choice is kept in the first-party cookie evive_consent (necessary, 180 days).
  * - Analytics: Google Consent Mode v2 starts "denied"; Google Tag Manager is only loaded after consent.
  *   Withdrawing sets consent back to denied and removes the _ga / _gid / _gat cookies.
@@ -185,6 +185,9 @@
     storeChoice(choice);
     apply(choice, true);
     hide();
+    // Tag Manager cannot be unloaded: after a withdrawal, reload so it is gone from this page too
+    // (otherwise its tags keep sending cookieless pings until the next page).
+    if (!choice.analytics && gtmLoaded) location.reload();
   }
 
   // ── banner ──────────────────────────────────────────────────────────────────────────────────
