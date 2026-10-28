@@ -9,6 +9,7 @@
  * Author: evive.works (StackPros B.V.)
  * Author URI: https://evive.works
  * License: GPL-2.0-or-later
+ * Update URI: https://github.com/evive-works/evive-cookie-banner
  */
 
 if (!defined('ABSPATH')) exit;
@@ -16,6 +17,17 @@ if (!defined('ABSPATH')) exit;
 define('EVIVE_CB_VERSION', '1.0.1');
 define('EVIVE_CB_FILE', __FILE__);
 define('EVIVE_CB_DIR', plugin_dir_path(__FILE__));
+
+// Updates: WordPress offers every GitHub Release of github.com/evive-works/evive-cookie-banner with the asset
+// evive-cookie-banner.zip (Plugin Update Checker v5, MIT, same setup as the evive Connector).
+require_once EVIVE_CB_DIR . 'vendor/plugin-update-checker/plugin-update-checker.php';
+$eviveCbUpdates = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+    'https://github.com/evive-works/evive-cookie-banner/',
+    __FILE__,
+    'evive-cookie-banner'
+);
+$eviveCbUpdates->setBranch('main');
+$eviveCbUpdates->getVcsApi()->enableReleaseAssets('/evive-cookie-banner\.zip$/');
 
 require_once EVIVE_CB_DIR . 'includes/settings.php';
 

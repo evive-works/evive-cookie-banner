@@ -27,3 +27,11 @@ service.
   **Consent revision**.
 
 Don't let another plugin insert the same GTM container as well (for example Site Kit's Tag Manager module).
+
+## Updates and releases
+Sites get new versions through WordPress itself ("Update available"), via the bundled Plugin Update Checker in GitHub
+mode: every GitHub Release of github.com/evive-works/evive-cookie-banner with the asset `evive-cookie-banner.zip`
+(folder `evive-cookie-banner/` inside). The process is the same as for the evive Connector (on evive, as root):
+1. Commit in `/var/www/modules-dev/github-evive-cookie-banner`.
+2. `/var/www/modules-dev/release-wp-plugin.sh evive-cookie-banner X.Y.Z` (bumps the version, tags it, builds `/tmp/evive-cookie-banner.zip`).
+3. `/var/www/modules-dev/publish-wp-plugin.sh evive-cookie-banner X.Y.Z "<notes>"` (pushes and creates the GitHub Release).
