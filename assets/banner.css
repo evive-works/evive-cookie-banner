@@ -1,0 +1,78 @@
+/* evive Cookie Banner. Colours can be overridden per site with these custom properties. */
+#evive-cb {
+  --evive-cb-bg: #ffffff;
+  --evive-cb-fg: #1f2933;
+  --evive-cb-muted: #52606d;
+  --evive-cb-border: #d9e2ec;
+  --evive-cb-btn-bg: #1f2933;
+  --evive-cb-btn-fg: #ffffff;
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2147483000;
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--evive-cb-bg);
+  color: var(--evive-cb-fg);
+  border: 1px solid var(--evive-cb-border);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+  font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  text-align: left;
+}
+#evive-cb[hidden] { display: none; }
+#evive-cb .evive-cb-inner { padding: 18px 20px; max-height: 80vh; overflow-y: auto; }
+#evive-cb .evive-cb-title { margin: 0 0 6px; font-size: 16px; font-weight: 600; color: var(--evive-cb-fg); }
+#evive-cb .evive-cb-text { margin: 0 0 14px; color: var(--evive-cb-muted); }
+#evive-cb .evive-cb-text a { color: inherit; text-decoration: underline; }
+#evive-cb .evive-cb-prefs { margin: 0 0 14px; border-top: 1px solid var(--evive-cb-border); }
+#evive-cb .evive-cb-prefs[hidden] { display: none; }
+#evive-cb .evive-cb-row { display: flex; align-items: center; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--evive-cb-border); cursor: pointer; margin: 0; }
+#evive-cb .evive-cb-row-text { flex: 1; display: flex; flex-direction: column; }
+#evive-cb .evive-cb-row-text span { color: var(--evive-cb-muted); font-size: 13px; }
+#evive-cb .evive-cb-always { font-size: 12px; color: var(--evive-cb-muted); white-space: nowrap; }
+#evive-cb .evive-cb-toggle { width: 20px; height: 20px; flex: none; margin: 0; accent-color: var(--evive-cb-btn-bg); }
+#evive-cb .evive-cb-buttons { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+#evive-cb .evive-cb-btn[hidden] { display: none; }
+/* Accept and Reject look exactly the same: neither is the "easy" button. */
+.evive-cb-btn {
+  appearance: none;
+  border: 1px solid var(--evive-cb-btn-bg, #1f2933);
+  background: var(--evive-cb-btn-bg, #1f2933);
+  color: var(--evive-cb-btn-fg, #ffffff);
+  border-radius: 6px;
+  padding: 9px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+  font-family: inherit;
+  cursor: pointer;
+  min-width: 130px;
+}
+#evive-cb .evive-cb-btn-plain { background: transparent; color: var(--evive-cb-fg); border-color: var(--evive-cb-border); }
+.evive-cb-btn:focus-visible { outline: 3px solid #3b82f6; outline-offset: 2px; }
+@media (max-width: 560px) {
+  #evive-cb { left: 8px; right: 8px; bottom: 8px; }
+  #evive-cb .evive-cb-buttons { flex-direction: column-reverse; }
+  #evive-cb .evive-cb-btn { width: 100%; }
+}
+
+/* Held-back video: a box over the (hidden) iframe until the visitor loads it. */
+.evive-cb-video {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  background: #1f2933;
+  color: #ffffff;
+  text-align: center;
+  font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  min-height: 180px;
+}
+.evive-cb-video p { margin: 0; max-width: 460px; color: #ffffff; }
+.evive-cb-video .evive-cb-btn { --evive-cb-btn-bg: #ffffff; --evive-cb-btn-fg: #1f2933; }
